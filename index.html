@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Jaka jest różnica między script w <head> a script w <body> -->
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="main">
+      <div class="main__container">
+        <h1 class="title">Strona glówna</h1>
+        <input name="player1" type="text">
+        <input name="player2" type="text">
+        <button type="button" id="set-players">ghdfjg</button>
+        <button id="start-game" class="start">Rozpocznij grę</button>
+      </div>
+    </template>
+
+    <template id="game">
+      <h1 class="title">Tic Tac Toe</h1>
+      <p id="player" class="player"><span>Gracz 1</span></p>
+      <div id="{}" class="game"></div>
+    </template>
+
+    <template id="win">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 2em;">
+        <h2>Wygral Gracz</h2>
+        <button id="restart-game" style="padding: 2em;">Zagraj jeszcze raz</button>
+        <button id="main-page" style="padding: 2em;">Przejdź do strony glównej</button>
+      </div>
+    </template>
+
+    <script type="module" src="/src/javascript/index.js"></script>
+    </script>
+  </body>
+</html>
