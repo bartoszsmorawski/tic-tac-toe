@@ -1,10 +1,9 @@
 import { state } from "./state";
 import { player1, player2 } from "./players";
 import { checkWin } from "./checkWin";
+import { getItem } from './localStorage';
 
-const playerText = document.getElementById('player');
-
-export function updateMatrix(cell) {
+export function updateMatrix(cell, playerText) {
     if (state.winnerStatus.isWin) return;
 
     const row = state.matrix.find(r => r.includes(cell));
@@ -12,18 +11,16 @@ export function updateMatrix(cell) {
 
     const coordinates = `${state.matrix.indexOf(row)}${col}`;
 
+    const firstPlayer = getItem('player1') || 'Gracz 1';
+    const secondPlayer = getItem('player2') || 'Gracz 2';
+
     if (!(state.count % 2)) {
         player1.push(coordinates);
         checkWin(player1, '1');
-        playerText.textContent = 'Gracz 2';
+        playerText.textContent = secondPlayer;
     } else {
         player2.push(coordinates);
         checkWin(player2, '2');
-        playerText.textContent = 'Gracz 1';
+        playerText.textContent = firstPlayer;
     }
-
-
-    // console.log(player1, player2);
-    
-    // znajdź sposób, byśmy mogli mieć dwóch graczy, i przypisywać im wspólrzędne klikniętej komórki
 }
